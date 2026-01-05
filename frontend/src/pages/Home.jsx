@@ -118,7 +118,7 @@ const Home = () => {
                                 <div style={{ fontSize: '0.8rem', marginBottom: 5 }}>Severity: <b>{incident.severity}</b></div>
                                 <div>{incident.description}</div>
                                 {incident.image && (
-                                    <img src={`http://localhost:5001${incident.image}`} alt="Evidence" style={{ width: '100%', marginTop: 5, borderRadius: 4 }} />
+                                    <img src={`${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5001'}${incident.image}`} alt="Evidence" style={{ width: '100%', marginTop: 5, borderRadius: 4 }} />
                                 )}
                                 <div style={{ fontSize: '0.7rem', color: '#666', marginTop: 5 }}>
                                     {new Date(incident.createdAt).toLocaleString()}
